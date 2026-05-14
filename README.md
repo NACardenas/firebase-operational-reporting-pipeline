@@ -23,13 +23,14 @@ The project was designed as a modular and reusable architecture focused on:
 
 ## Why this project
 
-This repository muestra un pipeline ETL ligero para equipos BI, con extracción diaria, semanal o mensual desde Firebase Realtime Database y ejecución automatizada en GitHub Actions.
+This repository demonstrates a lightweight ETL reporting pipeline for BI and operational analytics teams using Firebase Realtime Database and GitHub Actions automation.
 
-Usa el proyecto para:
-- automatizar la extracción de datos operativos
-- validar rangos de fechas y filtros de consulta
-- demostrar integración de variables de entorno y secretos
-- preparar un pipeline de reporte con base en datos históricos
+The project can be used to:
+
+- automate operational data extraction
+- validate date-range reporting queries
+- demonstrate environment variable and secret integration
+- prepare cloud-based operational reporting workflows
 
 ---
 
