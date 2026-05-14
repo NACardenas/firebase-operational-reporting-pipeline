@@ -1,0 +1,33 @@
+name: Daily Firebase Report
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 13 * * *" # 08:00 AM Peru time
+
+jobs:
+  daily-report:
+    runs-on: ubuntu-latest
+
+    env:
+      FIREBASE_URL_PRODUCTION: ${{ secrets.FIREBASE_URL_PRODUCTION }}
+      FIREBASE_URL_INPUTS: ${{ secrets.FIREBASE_URL_INPUTS }}
+      FIREBASE_AUTH_TOKEN: ${{ secrets.FIREBASE_AUTH_TOKEN }}  # Agregar este secret
+      
+      REPORT_TYPE: daily
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Firebase pipeline
+        run: python src/main.py
